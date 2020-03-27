@@ -41,12 +41,21 @@
                     <?php if( have_rows('icons') ): $i=0;?>
                         <?php while( have_rows('icons') ): the_row(); 
                             $image = get_sub_field('image');
+                            $icon = get_sub_field('icon');
                             $counter = get_sub_field('counter');
                             $text = get_sub_field('text'); ?>
                             <div class="col-lg-3 col-md-6 col-sm-6 text-center">
                                 <div class="single-statics <?php echo $i==0 ? 'no-border' : ''; ?>">
                                     <div class="icon-box">
-                                        <img width="55" height="55" src="<?php echo esc_url( $image ); ?>">
+                                        <?php
+                                        if ($image) { ?>
+                                                <img width="55" height="55" src="<?php echo esc_url( $image ); ?>">
+                                            <?php
+                                        } else { ?>
+                                            <?php
+                                            echo $icon;
+                                        }
+                                        ?>
                                     </div>
                                     <div class="text-box">
                                         <span class="counter"><?php echo $counter; ?></span>
@@ -56,28 +65,6 @@
                             </div>
                         <?php $i++; endwhile; ?>
                     <?php endif; ?>
-                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
-                        <div class="single-statics">
-                            <div class="icon-box">
-                                <i class="icofont-addons"></i>
-                            </div>
-                            <div class="text-box">
-                                <span class="counter">10800000</span>
-                                <h4>Withdrawn each month</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 text-center">
-                        <div class="single-statics">
-                            <div class="icon-box">
-                                <i class="ren-people"></i>
-                            </div>
-                            <div class="text-box">
-                                <span class="counter">1800000</span>
-                                <h4>Active investors daily</h4>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
