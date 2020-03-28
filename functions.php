@@ -92,3 +92,49 @@ function skyr_excerpt_length( $number ){
     return 25;
 }*/
 
+$testimonial_labels = array(
+    'name'                  => _x( 'Testimonials', 'Post type general name', SKYR_LANG ),
+    'singular_name'         => _x( 'Testimonial', 'Post type singular name', SKYR_LANG ),
+    'menu_name'             => _x( 'Testimonials', 'Admin Menu text', SKYR_LANG ),
+    'name_admin_bar'        => _x( 'Testimonial', 'Add New on Toolbar', SKYR_LANG ),
+    'add_new'               => __( 'Add New', SKYR_LANG ),
+    'add_new_item'          => __( 'Add New Testimonial', SKYR_LANG ),
+    'new_item'              => __( 'New Testimonial', SKYR_LANG ),
+    'edit_item'             => __( 'Edit Testimonial', SKYR_LANG ),
+    'view_item'             => __( 'View Testimonial', SKYR_LANG ),
+    'all_items'             => __( 'All Testimonials', SKYR_LANG ),
+    'search_items'          => __( 'Search Testimonials', SKYR_LANG ),
+    'parent_item_colon'     => __( 'Parent Testimonials:', SKYR_LANG ),
+    'not_found'             => __( 'No clients found.', SKYR_LANG ),
+    'not_found_in_trash'    => __( 'No clients found in Trash.', SKYR_LANG ),
+    'featured_image'        => _x( 'Testimonial Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', SKYR_LANG ),
+    'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', SKYR_LANG ),
+    'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', SKYR_LANG ),
+    'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', SKYR_LANG ),
+    'archives'              => _x( 'Testimonial archives', 'The post type archive label used in nav menus. Default “Post Archives”.', SKYR_LANG ),
+    'insert_into_item'      => _x( 'Insert into client', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post).', SKYR_LANG ),
+    'uploaded_to_this_item' => _x( 'Uploaded to this client', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post).', SKYR_LANG ),
+    'filter_items_list'     => _x( 'Filter clients list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”.', SKYR_LANG ),
+    'items_list_navigation' => _x( 'Testimonials list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”.', SKYR_LANG ),
+    'items_list'            => _x( 'Testimonials list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”.', SKYR_LANG ),
+);
+
+$testimonial_args = array(
+    'labels'             => $testimonial_labels,
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => array(
+                              'with_front' => false
+                            ),
+    'capability_type'    => 'post',
+    'has_archive'        => false,
+    'menu_icon'          => 'dashicons-money',
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+);
+
+register_post_type( 'testimonials', $testimonial_args );
