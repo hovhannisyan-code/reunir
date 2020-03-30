@@ -19,32 +19,28 @@
                 <div class="row text-center">
                     <div class="col-lg-12">
                         <div class="social-icon">
+                            <?php if( have_rows('icons_11') ): $i=0;?>
                             <ul class="icon-area">
-                                <li class="social-nav">
-                                    <a href="index.html#"><i class="icofont-facebook"></i></a>
-                                </li>
-                                <li class="social-nav">
-                                    <a href="index.html#"><i class="icofont-twitter"></i></a>
-                                </li>
-                                <li class="social-nav">
-                                    <a href="index.html#"><i class="icofont-pinterest"></i></a>
-                                </li>
-                                <li class="social-nav">
-                                    <a href="index.html#"><i class="icofont-rss"></i></a>
-                                </li>
+                                <?php while( have_rows('icons_11') ): the_row(); 
+                                    $icon = get_sub_field('icon');
+                                    $link = get_sub_field('link'); ?>
+                                    <li class="social-nav">
+                                        <a href="<?php echo $link; ?>"><?php echo $icon; ?></a>
+                                    </li>
+                                <?php $i++; endwhile; ?>
                             </ul>
+                            <?php endif; ?>
                         </div>
                         <div class="footer-text">
-                            <h5 class="footer-title">Subscribe to Reunir</h5>
-                            <h2 class="footer-subtitle">To Get Exclusive benefits</h2>
+                            <h5 class="footer-title"><?php echo get_field('before_heading_12'); ?></h5>
+                            <h2 class="footer-subtitle"><?php echo get_field('heading_12'); ?></h2>
                         </div>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="col-lg-7">
                         <div class="subscribe">
-                            <input type="email" name="email" placeholder="Your Email Address" class="input-subscribe">
-                            <button class="subscribe-btn">Subscribe</button>
+                            <?php echo do_shortcode('[contact-form-7 id="230" title="Subscribe"]'); ?>
                         </div>
                     </div>
                 </div>
@@ -52,7 +48,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-6 col-md-12 d-flex justify-content-start reunir-content-center">
                             <div class="footer-bottom-left">
-                                <p>Copyright © 2019.All Rights Reserved By <a href="index.html#">Reunir</a></p>
+                                <p><?php echo get_field('copyright_text'); ?></p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12 d-flex justify-content-end reunir-content-center">

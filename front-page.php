@@ -533,15 +533,21 @@
             <div class="row">
                 <div class="col-lg-6 col-md-8">
                     <div class="signup-text">
-                        <h5 class="signup-title">CREATE YOUR PERSONAL ACCOUNT</h5>
-                        <h2 class="signup-subtitle">Get Started Now</h2>
-                        <p class="signup-title-describe">Get Started Now,Create your personal account as a first step to become a sucessfull investor.Are you ready to start earning with us?</p>
+                        <h5 class="signup-title"><?php echo get_field('before_heading_9'); ?></h5>
+                        <h2 class="signup-subtitle"><?php echo get_field('heading_9'); ?></h2>
+                        <p class="signup-title-describe"><?php echo get_field('description_9'); ?></p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-4 d-flex justify-content-end align-items-center reunir-content-center">
-                    <div class="signup-right-text">
-                        <a href="#">Signup Now<i class="ren-arrowright"></i></a>
+                <?php
+                $start_button_9 = get_field('start_button_9'); 
+                if ($start_button_9) { ?>
+                    <div class="col-lg-6 col-md-4 d-flex justify-content-end align-items-center reunir-content-center">
+                        <div class="signup-right-text">
+                            <a href="<?php echo $start_button_9['link']; ?>"><?php echo $start_button_9['text']; ?><i class="ren-arrowright"></i></a>
+                        </div>
                     </div>
+                    <?php
+                } ?>
                 </div>
             </div>
         </div>
@@ -555,30 +561,21 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-8 text-center">
                 <div class="contact-us-text">
-                    <h5 class="contact-us-title">Contact Us</h5>
-                    <h2 class="contact-us-subtitle">Get in Touch</h2>
-                    <p class="contact-us-title-describe">Please feel free to contact us through our support center. Simply choose the appropriate support options to send us your questions, concerns and/or feedback.Our customer service team is ready to overcome any issues that might occur.</p>
+                    <h5 class="contact-us-title"><?php echo get_field('before_heading_10'); ?></h5>
+                    <h2 class="contact-us-subtitle"><?php echo get_field('heading_10'); ?></h2>
+                    <p class="contact-us-title-describe"><?php echo get_field('description_10'); ?></p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6">
                 <div class="contact-img">
-                    <img src="<?php echo SKYR_ASSETS_DIR_URI; ?>/img/contact-us.jpg" alt="#">
+                    <img src="<?php echo get_field('background_10'); ?>" alt="<?php echo get_field('heading_10'); ?>">
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="contact-form">
-                    <form id="contactForm" method="post" class="contact-form-aqua">
-                        <h2 class="contact-head">Send Us a Massage</h2>
-                        <input type="text" name="name" required="" placeholder="Name *" class="contact-frm active">
-                        <input type="email" name="email" required="" placeholder="Email *" class="contact-frm">
-                        <textarea name="message" id="message" placeholder="Message *" class="contact-msg"></textarea>
-                        <input id="form-submit" type="submit" value="SUBMIT NOW" class="contact-btn">
-                        <br>
-                        <br>
-                        <span class="msgSubmit"></span>
-                    </form>
+                     <?php echo do_shortcode('[contact-form-7 id="228" title="Contact form 1"]'); ?>
                 </div>
             </div>
         </div>

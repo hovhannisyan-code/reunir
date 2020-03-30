@@ -18,3 +18,17 @@ Twenty Nineteen is based on Underscores https://underscores.me/, (C) 2012-2018 A
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 */
+
+
+.subscribe form p {
+	margin-bottom: 0;
+}
+.subscribe .wpcf7-not-valid-tip {
+	position: absolute;
+}
+.subscribe  div.wpcf7-response-output {
+	position: absolute;
+}
+div.wpcf7-validation-errors, div.wpcf7-acceptance-missing {
+	    border: 2px solid #f50;
+}
